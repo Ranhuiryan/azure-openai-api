@@ -35,3 +35,6 @@ config_private.py
 *.bak
 *.bak.*
 *.json
+
+# Include JSON files in .devcontainer
+!.devcontainer/*.json
