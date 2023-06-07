@@ -10,5 +10,4 @@ ARG VENV_PATH="/home/vscode/venv"
 COPY requirements.txt /tmp/pip-tmp/
 RUN su vscode -c "python -m venv /home/vscode/venv" \
     && su vscode -c "${VENV_PATH}/bin/pip --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt" \
-    && rm -rf /tmp/pip-tmp \
-    && su vscode -c "source ${VENV_PATH}/bin/activate && mplfonts init"
+    && rm -rf /tmp/pip-tmp 
