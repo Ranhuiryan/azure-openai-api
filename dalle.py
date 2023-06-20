@@ -9,9 +9,13 @@ api_version = '2023-06-01-preview'
 url = "{}openai/images/generations:submit?api-version={}".format(api_base, api_version)
 headers= { "api-key": api_key, "Content-Type": "application/json" }
 body = {
-    "prompt": "The seattle skyline and space needle, impressionist painting",
+    "prompt": "A greeting cat, Vector Illustation, line stamp, kawaii",
+    # Minimum of 1 and max of 3
     "n": 2,
-    # "resolution": "1024x1024"
+    # select a image size from 256x256, 512x512, 1024x1024
+    # "size": "256x256"
+    # "size": "512x512"
+    "size": "1024x1024"
 }
 submission = requests.post(url, headers=headers, json=body)
 operation_location = submission.headers['Operation-Location']
